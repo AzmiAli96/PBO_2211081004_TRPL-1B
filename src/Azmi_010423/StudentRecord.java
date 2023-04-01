@@ -106,10 +106,4 @@ public class StudentRecord {
         System.out.println("English Grade:" +eGrade);
         System.out.println("Science Grade:" +sGrade);
     }
-    
-    
-    
-    
-    
-    
 }
