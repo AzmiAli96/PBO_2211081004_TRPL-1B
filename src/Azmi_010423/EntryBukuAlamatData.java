@@ -8,7 +8,7 @@ package Azmi_010423;
  *
  * @author nitro
  */
-public class StudentRecordData {
+public class EntryBukuAlamatData {
     public static void main (String []args){
         EntryBukuAlamat dataBuku[] = new EntryBukuAlamat[100];
         EntryBukuAlamat d1 = new EntryBukuAlamat();
