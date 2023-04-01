@@ -26,5 +26,5 @@ public class Aritmatika {
         }
         j++;
     }
-    System.out.println();
+
 }
