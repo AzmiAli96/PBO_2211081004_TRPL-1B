@@ -10,21 +10,20 @@ package Azmi_010423;
  */
 public class StudentRecordData {
     public static void main (String []args){
-        EntryBukuAlamat dataBuku[] = new EntryBukuAlamat[100];
-        EntryBukuAlamat d1 = new EntryBukuAlamat();
+        StudentRecord dataSiswa[] = new StudentRecord[100];
+        StudentRecord d1 = new StudentRecord();
         d1.setName("Azmi");
         d1.setAddress("Bukittinggi");
-        d1.setTelp("********5396");
-        d1.setEmail("azmialid@gmail.com");
-        dataBuku[0] = d1;
+        d1.setAge(19);
+        dataSiswa[0] = d1;
         
-        System.out.println("Nama      [0]:" +dataBuku[0].getName());
-        dataBuku[0].setName("");
-        dataBuku[0].setAddress("");
-        dataBuku[0].setTelp("");
-        dataBuku[0].setEmail("");
+        System.out.println("Nama      [0]:" +dataSiswa[0].getName());
+        dataSiswa[0].setName("");
+        dataSiswa[0].setAddress("");
+        dataSiswa[0].setAge(0);
         
-        System.out.println("Nama      [0]:" +dataBuku[0].getName());
+        System.out.println("Nama      [0]:" +dataSiswa[0].getName());
         
     }
+    
 }
