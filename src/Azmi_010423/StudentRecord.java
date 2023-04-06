@@ -17,6 +17,7 @@ public class StudentRecord {
     private double englishGrade;
     private double scienceGrade;
     private double average;
+    private char nilaihuruf;
     
     private static int studentCount; //class variable
     
@@ -105,5 +106,19 @@ public class StudentRecord {
         System.out.println("Math Grade:" +mGrade);
         System.out.println("English Grade:" +eGrade);
         System.out.println("Science Grade:" +sGrade);
+    }
+    
+    public char NilaiHuruf(){
+        if (getAverage() > 80)
+            nilaihuruf = 'A';
+        else if (getAverage() > 65)
+            nilaihuruf = 'B';
+        else if (getAverage() > 55)
+            nilaihuruf = 'C';
+        else if (getAverage() > 40)
+            nilaihuruf = 'D';
+        else if (getAverage() > 0)
+            nilaihuruf = 'E';
+        return nilaihuruf;
     }
 }
