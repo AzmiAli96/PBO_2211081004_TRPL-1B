@@ -10,25 +10,23 @@ package Azmi_080423;
  */
 public abstract class Shape {
     
-    private String name;
-    private double area;
     
-    public Shape(String name, double area){
-        this.name = name;
-        this.area = area;
+    public Shape(){
+        //
     }
     
-     public String getName(){
-         return name;
-     }
-     public void setName(String name){
-         this.name = name;
-     }
+     public abstract String getName();
      
-     public double getArea(){
-         return area;
-     }
-     public void setArea(double area){
-         this.area = area;
+     public abstract double getArea();
+     
+     public static void main(String []args){
+         Circle c = new Circle(8);
+         Square q = new Square(5);
+         System.out.println("nama objek c"+c.getName());
+         System.out.println("hasil objek c"+c.getArea());
+         
+         System.out.println("nama objek q"+q.getName());
+         System.out.println("hasil objek q"+q.getArea());
+         
      }
 }

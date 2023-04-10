@@ -25,7 +25,7 @@ public class Latihan extends StudentRecord{
     
     @Override
     public double getAverage(){
-        return (getMathGrade() + getEnglishGrade() + getScienceGrade() / 3);
+        return (getMathGrade() + getEnglishGrade() + getScienceGrade() + getKomGrade() / 4);
     }
 }
     

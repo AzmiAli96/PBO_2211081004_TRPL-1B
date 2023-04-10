@@ -8,6 +8,18 @@ package Azmi_080423;
  *
  * @author nitro
  */
-public class Square {
+public class Square extends Shape {
+    private int s;
     
+    public Square(int s){
+        this.s = s;
+    }
+
+    public String getName(){
+        return "Persegi";
+     }
+    
+    public double getArea(){
+         return s*s;
+     }
 }

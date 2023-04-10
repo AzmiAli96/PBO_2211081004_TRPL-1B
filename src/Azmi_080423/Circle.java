@@ -8,22 +8,19 @@ package Azmi_080423;
  *
  * @author nitro
  */
-public class Circle {
+public class Circle extends Shape{
     
-    @Override
-    public String getName(){
-        System.out.println("nama")
-         return name;
-     }
+    private int r;
     
-    @Override
-    public double getArea(){
-         return area;
-     }
-    
-    public static void main (String []args){
-        Circle c = new Circle();
-        c.getName();
-        c.getArea();
+    public Circle(int r){
+        this.r = r;
     }
+
+    public String getName(){
+        return "Lingkaran";
+     }
+    
+    public double getArea(){
+         return 3.14*r*r;
+     }
 }
