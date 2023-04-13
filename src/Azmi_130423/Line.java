@@ -49,7 +49,7 @@ public class Line {
         Line b = new Line(3,7,1,3);
         
         System.out.println("a > b :" +b.isGreater(a,b));
-        System.out.println("a < b :" +a.isGreater(a,b));
-        System.out.println("a = b :" +a.isGreater(a,b));
+        System.out.println("a < b :" +a.isLess(a,b));
+        System.out.println("a = b :" +a.isEqual(a,b));
     }
 }
