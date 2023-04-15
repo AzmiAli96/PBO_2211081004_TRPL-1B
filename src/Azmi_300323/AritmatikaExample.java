@@ -9,12 +9,12 @@ package Azmi_300323;
  * @author nitro
  */
 public class AritmatikaExample {
-        public static void main (String []args){
-            Aritmatika ar = new Aritmatika;
-            int a = 1;
-            int b = 2;
+    public static void main (String []args){
+        Aritmatika ar = new Aritmatika();
+        int a = 1;
+        int b = 2;
+        
+    System.out.println(ar.tambah(a,b));
+    System.out.println(ar.ckganjil(a));
         }
-        System.out.println(tambah(a,b));
-        System.out.println(ckganjil(a));
-    
 }
