@@ -120,6 +120,11 @@ public class FormAnggota extends javax.swing.JFrame {
         btnDelete.setBounds(190, 100, 72, 23);
 
         btnCencel.setText("Cencel");
+        btnCencel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCencelActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCencel);
         btnCencel.setBounds(280, 100, 72, 23);
 
@@ -189,6 +194,11 @@ public class FormAnggota extends javax.swing.JFrame {
         controller.tampilData();
         controller.bersihForm();
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnCencelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCencelActionPerformed
+        // TODO add your handling code here:
+        controller.bersihForm();
+    }//GEN-LAST:event_btnCencelActionPerformed
 
     /**
      * @param args the command line arguments
