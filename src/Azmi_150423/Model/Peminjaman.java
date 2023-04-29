@@ -9,33 +9,33 @@ package Azmi_150423.Model;
  * @author nitro
  */
 public class Peminjaman {
-    private String nobp;
-    private String kodebuku;
+    private Anggota anggota;
+    private Buku buku;
     private String tglpeminjaman;
     private String tglkembali;
     
     public Peminjaman(){
     }
     
-    public Peminjaman(String nobp, String kodebuku, String tglpeminjaman, String tglkembali){
-        this.nobp = nobp;
-        this.kodebuku = kodebuku;
+    public Peminjaman(Anggota anggota, Buku buku, String tglpeminjaman, String tglkembali){
+        this.anggota = anggota;
+        this.buku = buku;
         this.tglpeminjaman = tglpeminjaman;
         this.tglkembali = tglkembali;
     }
     
-    public String getNobp(){
-        return nobp;
+    public Anggota getAnggota(){
+        return anggota;
     }
-    public void setNobp(String nobp){
-        this.nobp = nobp;
+    public void setAnggota(Anggota anggota){
+        this.anggota = anggota;
     }
     
-    public String getKodeBuku(){
-        return kodebuku;
+    public Buku getBuku(){
+        return buku;
     }
-    public void setKodeBuku(String kodebuku){
-        this.kodebuku = kodebuku;
+    public void setBuku(Buku buku){
+        this.buku = buku;
     }
     
     public String getTglPeminjaman(){

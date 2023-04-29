@@ -9,13 +9,15 @@ import java.util.List;
  *
  * @author nitro
  */
-public class PeminjamanDaoImpl {
+public class PeminjamanDaoImpl implements PeminjamanDao {
     List<Peminjaman> data = new ArrayList<>();
     
     public PeminjamanDaoImpl(){
-        data.add(new Peminjaman("1111", "11111", "20/04/2023","27/04/2023"));
-        data.add(new Peminjaman("1112", "11112", "21/04/2023","27/04/2023"));
-        data.add(new Peminjaman("1113", "11113", "22/04/2023","27/04/2023"));
+        AnggotaDao daoAnggota = new AnggotaDaoImp1();
+        BukuDao daoBuku = new BukuDaoImp1();
+        data.add(new Peminjaman(daoAnggota.getAnggota(0), daoBuku.getBuku(0), "20/04/2023","27/04/2023"));
+        data.add(new Peminjaman(daoAnggota.getAnggota(0), daoBuku.getBuku(1), "21/04/2023","27/04/2023"));
+        
     }
     
     public void save(Peminjaman peminjaman){
