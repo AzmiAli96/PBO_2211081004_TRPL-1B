@@ -12,13 +12,10 @@ import java.util.List;
  */
 public class KaryawanDaoImpl implements KaryawanDao{
     List<Karyawan> data = new ArrayList<>();
-              
-        public KaryawanDaoImpl(){
-            data.add(new Karyawan("1111", "1", "CEO"));
-            data.add(new Karyawan("1112", "1", "Ketua"));
-            data.add(new Karyawan("1113", "2", "Karyawan"));
-        }
-        
+    public KaryawanDaoImpl(){
+        data.add(new Karyawan("Sudin","Padang","y","001","1","Emp",2));
+        data.add(new Karyawan("SamSudin","Padang","t","002","2","OB",1));
+    }
     public void save(Karyawan karyawan){
         data.add(karyawan);
     }
@@ -35,4 +32,3 @@ public class KaryawanDaoImpl implements KaryawanDao{
         return data;
     }
 }
-

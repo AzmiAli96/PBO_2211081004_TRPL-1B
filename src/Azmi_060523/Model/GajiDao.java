@@ -5,14 +5,15 @@
 package Azmi_060523.Model;
 import java.util.List;
 
+
 /**
  *
  * @author nitro
  */
-public interface KaryawanDao {
-    void save(Karyawan karyawan);
-    void update(int index, Karyawan karyawan);
+public interface GajiDao {
+    void save(Gaji gaji);
+    void update(int index, Gaji gaji);
     void delete(int index);
-    Karyawan getKaryawan(int index);
-    List<Karyawan> getAll();
+    Gaji getGaji(int index);
+    List<Gaji> getAll();
 }

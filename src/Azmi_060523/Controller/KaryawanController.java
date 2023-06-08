@@ -4,9 +4,7 @@
  */
 package Azmi_060523.Controller;
 
-import Azmi_060523.Model.Karyawan;
-import Azmi_060523.Model.KaryawanDao;
-import Azmi_060523.Model.KaryawanDaoImpl;
+import Azmi_060523.Model.*;
 import Azmi_060523.View.FormKaryawan;
 import javax.swing.table.DefaultTableModel;
 
@@ -15,63 +13,81 @@ import javax.swing.table.DefaultTableModel;
  * @author nitro
  */
 public class KaryawanController {
-    private FormKaryawan formKaryawan;
+    private FormKaryawan form;
     private KaryawanDao karyawanDao;
     private Karyawan karyawan;
     
-    public KaryawanController (FormKaryawan formKaryawan){
-        this.formKaryawan = formKaryawan;
+    public KaryawanController(FormKaryawan form){
+        this.form = form;
         karyawanDao = new KaryawanDaoImpl();
     }
-    
-    public void bersihForm(){
-        formKaryawan.getTxtNip().setText("");
-        formKaryawan.getTxtGolongan().setText("");
-        formKaryawan.getTxtJabatan().setText("");
+    public void clear(){
+        form.getTxtNama().setText("");
+        form.getTxtNip().setText("");
+        form.getTxtGolongan().setText("");
+        form.getTxtJabatan().setText("");
+        form.getTxtAlamat().setText("");
+        form.getTxtNikah().setText("");
+        form.getTxtAnak().setText("");
     }
-    
-    public void saveKaryawan(){
-        karyawan = new karyawan();
-        karyawan.setNobp(formKaryawan.getTxtNip().getText());
-        karyawan.setNama(formKaryawan.getTxtGolongan().getText());
-        karyawan.setAlamat(formKaryawan.getTxtJabatan().getText());
-        karyawanDao.save(karyawan);
-        javax.swing.JOptionPane.showMessageDialog(formKaryawan, "Entri Ok");
-    }
-    
-    public void getKaryawan(){
-        int index = formKaryawan.getTblKaryawan().getSelectedRow();
+    public void get(){
+        int index = form.getTblKaryawan().getSelectedRow();
         karyawan = karyawanDao.getKaryawan(index);
         if(karyawan != null){
-            formKaryawan.getTxtNip().setText(karyawan.getNip());
-            formKaryawan.getTxtGolongan().setText(karyawan.getGolongan());
-            formKaryawan.getTxtJabatan().setText(karyawan.getJabatan());
+            form.getTxtNama().setText(karyawan.getNama());
+            form.getTxtNip().setText(karyawan.getNip());
+            form.getTxtGolongan().setText(karyawan.getGolongan());
+            form.getTxtJabatan().setText(karyawan.getJabatan());
+            form.getTxtAlamat().setText(karyawan.getAlamat());
+            form.getTxtNikah().setText(karyawan.getStatusNikah());
+            form.getTxtAnak().setText(""+karyawan.getJumlahAnak());
         }
     }
-    
-    public void updateKaryawan(){
-        int index = formKaryawan.getTblKaryawan().getSelectedRow();
-        karyawan.setNip(formKaryawan.getTxtNip().getText());
-        karyawan.setGolongan(formKaryawan.getTxtGolongan().getText());
-        karyawan.setJabatan(formKaryawan.getTxtJabatan().getText());
-        karyawanDao.update(index, karyawan);
+    public void insert(){
+        karyawan = new Karyawan();
+        karyawan.setNama(form.getTxtNama().getText());
+        karyawan.setNip(form.getTxtNip().getText());
+        karyawan.setGolongan(form.getTxtGolongan().getText());
+        karyawan.setJabatan(form.getTxtJabatan().getText());
+        karyawan.setAlamat(form.getTxtAlamat().getText());
+        karyawan.setStatusNikah(form.getTxtNikah().getText());
+        karyawan.setJumlahAnak(Integer.parseInt(form.getTxtAnak().getText()));
+        karyawanDao.save(karyawan);
+        javax.swing.JOptionPane.showMessageDialog(form, "Karyawan ditambahkan");
+    }
+    public void update(){
+        int idx = form.getTblKaryawan().getSelectedRow();
+        karyawan.setNama(form.getTxtNama().getText());
+        karyawan.setNip(form.getTxtNip().getText());
+        karyawan.setGolongan(form.getTxtGolongan().getText());
+        karyawan.setJabatan(form.getTxtJabatan().getText());
+        karyawan.setAlamat(form.getTxtAlamat().getText());
+        karyawan.setStatusNikah(form.getTxtNikah().getText());
+        karyawan.setJumlahAnak(Integer.parseInt(form.getTxtAnak().getText()));
+        karyawanDao.update(idx,karyawan);
+        javax.swing.JOptionPane.showMessageDialog(form, "Karyawan diupdate");
     }
     
-    public void deleteKaryawan(){
-        int index =formKaryawan.getTblKaryawan().getSelectedRow();
-        karyawanDao.delete(index);
-        javax.swing.JOptionPane.showMessageDialog(formKaryawan, "Delete");
+    public void delete(){
+        int idx = form.getTblKaryawan().getSelectedRow();
+        karyawanDao.delete(idx);
+        javax.swing.JOptionPane.showMessageDialog(form, "Karyawan dipecat");
     }
     
-    public void tampilData(){
-        DefaultTableModel tabelModel = (DefaultTableModel) formKaryawan.getTblKaryawan().getModel();
+    public void display(){
+        DefaultTableModel tabelModel =
+                (DefaultTableModel) form.getTblKaryawan().getModel();
         tabelModel.setRowCount(0);
         java.util.List<Karyawan> list = karyawanDao.getAll();
         for(Karyawan karyawan : list){
             Object[] data = {
+                karyawan.getNama(),
                 karyawan.getNip(),
                 karyawan.getGolongan(),
-                karyawan.getJabatan()
+                karyawan.getJabatan(),
+                karyawan.getAlamat(),
+                karyawan.getStatusNikah(),
+                karyawan.getJumlahAnak()
             };
             tabelModel.addRow(data);
         }

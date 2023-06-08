@@ -8,39 +8,42 @@ package Azmi_060523.Model;
  *
  * @author nitro
  */
-public class Karyawan {
+public class Karyawan extends People{
     private String nip;
     private String golongan;
     private String jabatan;
+    private int jumlahAnak;
     
-    public Karyawan(){
-    }
-    
-    public Karyawan(String nip, String golongan, String jabatan, String nama, String alamat, String statusnikah){
-        super(nama, alamat, statusnikah)
+    public Karyawan(){}
+    public Karyawan(String nama, String alamat, String statusNikah,String nip, String golongan, String jabatan, int anak){
+        super(nama,alamat,statusNikah);
         this.nip = nip;
         this.golongan = golongan;
         this.jabatan = jabatan;
-    }
-    
-    public String getNip(){
-        return nip;
+        this.jumlahAnak = anak;
     }
     public void setNip(String nip){
         this.nip = nip;
     }
-    
-    public String getGolongan(){
-        return golongan;
-    }
-    public void setGolongan(String golongan){
-        this.golongan = golongan;
-    }
-    
-    public String getJabatan(){
-        return jabatan;
+    public void setGolongan(String gol){
+        this.golongan = gol;
     }
     public void setJabatan(String jabatan){
         this.jabatan = jabatan;
+    }
+    public void setJumlahAnak(int anak){
+        this.jumlahAnak = anak;
+    }
+    public String getNip(){
+        return nip;
+    }
+    public String getGolongan(){
+        return golongan;
+    }
+    public String getJabatan(){
+        return jabatan;
+    }
+    public int getJumlahAnak(){
+        return jumlahAnak;
     }
 }

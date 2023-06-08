@@ -9,37 +9,32 @@ package Azmi_060523.Model;
  * @author nitro
  */
 public class People {
-    private String nama;
-    private String alamat;
-    private String statusnikah;
+   protected String nama;
+    protected String alamat;
+    protected String statusNikah;
     
-    public People(){
-    }
-    /*
-    public People(String nama,  String alamat, String statusnikah){
+    public People(){}
+    public People(String nama, String alamat, String statusNikah){
         this.nama = nama;
         this.alamat = alamat;
-        this.statusnikah = statusnikah;
-    }
-    */
-    public String getNama(){
-        return nama;
+        this.statusNikah = statusNikah;
     }
     public void setNama(String nama){
         this.nama = nama;
     }
-    
-    public String getAlamat(){
-        return alamat;
-    }
     public void setAlamat(String alamat){
         this.alamat = alamat;
     }
-    
-    public String getStatusNikah(){
-        return statusnikah;
+    public void setStatusNikah(String statusNikah){
+        this.statusNikah = statusNikah;
     }
-    public void setStatusNikah(String statusnikah){
-        this.statusnikah = statusnikah;
+    public String getNama(){
+        return nama;
+    }
+    public String getAlamat(){
+        return alamat;
+    }
+    public String getStatusNikah(){
+        return statusNikah;
     }
 }

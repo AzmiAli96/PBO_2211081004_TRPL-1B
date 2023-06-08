@@ -3,19 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/Azmi_150423/Controller/AnggotaController.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/Azmi_150423/Model/AnggotaDao.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/View/FormPelanggan.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/Model/NewClass.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/Model/WarnetDaoImpl.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/Model/Pelanggan.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/Model/Warnet.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/Azmi_150423/Model/Anggota.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/Controller/PelangganController.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/Model/PelangganDaoImpl.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/Azmi_150423/Model/AnggotaDaoImp1.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/Model/WarnetDao.java</file>
-            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/UTS_A/Model/PelangganDao.java</file>
+            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/Azmiali/Model/Anggota.java</file>
+            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/Azmiali/DB/DbHelper.java</file>
+            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/Azmiali/Model/AnggotaDaoImpl.java</file>
+            <file>file:/D:/STUDY/Laporan/PBO/PBO_2211081004_TRPL-1B/src/Azmiali/Model/AnggotaDao.java</file>
         </group>
     </open-files>
 </project-private>
