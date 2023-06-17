@@ -33,15 +33,9 @@ public class DbHelper {
     public static void main(String[] args) {
         try{
            connection = DbHelper.getConnection();
-           AnggotaDao dao = new AnggotaDaoImpl(connection);
-           Anggota anggota = new Anggota("A001", "Ali", "Padang", "L");
-           dao.insert(anggota);
            JOptionPane.showMessageDialog(null, "koneksi ok");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-    }
- 
-    
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }   
+    }    
 }
