@@ -23,6 +23,8 @@ public class FormPeminjaman extends javax.swing.JFrame {
         controller = new PeminjamanController(this);
         controller.clearForm();
         controller.tampil();
+        controller.isiComboAnggota();
+        controller.isiComboBuku();
     }
 
     public JComboBox<String> getCboKodeAnggota() {

@@ -33,31 +33,54 @@ public class PeminjamanController {
             dao = new PeminjamanDaoImpl (connection);
             anggota = new AnggotaDaoImpl (connection);
             buku = new BukuDaoImpl(connection);
-            peminjaman = new Peminjaman();
         } catch (SQLException ex) {
             Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     public void clearForm(){
-        try {
+            view.getTxtTglPinjam().setText("");
+            view.getTxtTglKembali().setText("");
+        /*try {
             List<Anggota> listAnggota = anggota.getAll();
             view.getCboKodeAnggota().removeAllItems();
             for(Anggota anggota : listAnggota){
                 view.getCboKodeAnggota().addItem(anggota.getKodeanggota());
-            }
             List<Buku> listBuku = buku.getAll();
             view.getCboKodeBuku().removeAllItems();
             for(Buku buku : listBuku){
                 view.getCboKodeBuku().addItem(buku.getKodebuku());
             }
-            view.getTxtTglPinjam().setText("");
-            view.getTxtTglKembali().setText("");
+            }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(view, ex);
             Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        */
+    }
+    
+    public void isiComboAnggota(){
+        try {
+            view.getCboKodeAnggota().removeAllItems();
+            List<Anggota> listAnggota = anggota.getAll();
+            for(Anggota anggota : listAnggota){
+                view.getCboKodeAnggota().addItem(anggota.getKodeanggota()+"-"+anggota.getNamaanggota());
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void isiComboBuku(){
+        try {
+            view.getCboKodeBuku().removeAllItems();
+            List<Buku> listBuku = buku.getAll();
+            for(Buku buku : listBuku){
+                view.getCboKodeBuku().addItem(buku.getKodebuku()+"-"+buku.getJudulbuku());
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(PeminjamanController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void tampil(){
@@ -122,9 +145,11 @@ public class PeminjamanController {
     }
     
     public void getPeminjaman(){
-        String kode = view.getTblPeminjaman().getValueAt(view.getTblPeminjaman().getSelectedRow(), 0).toString();
         try {
-            peminjaman = dao.getPeminjaman(kode);
+            String kode = view.getTblPeminjaman().getValueAt(view.getTblPeminjaman().getSelectedRow(), 0).toString();
+            String kodebuku = view.getTblPeminjaman().getValueAt(view.getTblPeminjaman().getSelectedRow(), 0).toString();
+            String tglpinjam = view.getTblPeminjaman().getValueAt(view.getTblPeminjaman().getSelectedRow(), 0).toString();
+            peminjaman = dao.getPeminjaman(kode, kodebuku, tglpinjam);
             view.getCboKodeAnggota().setSelectedItem(peminjaman.getKodeanggota());
             view.getCboKodeBuku().setSelectedItem(peminjaman.getKodebuku());
             view.getTxtTglPinjam().setText(peminjaman.getTglpinjam());

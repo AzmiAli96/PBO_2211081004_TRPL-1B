@@ -26,19 +26,16 @@ public class PeminjamanDaoImpl implements PeminjamanDao{
         ps.setString(3, peminjaman.getTglpinjam());
         ps.setString(4, peminjaman.getTglkembali());
         ps.executeUpdate();
-        ps.close();
     }
     
     public void update (Peminjaman peminjaman, String kode) throws Exception{
-        String sql = "update peminjaman SET kodeanggota = ?, kodebuku = ?, tglpinjam = ?, tglkembali = ? WHERE kodeanggota = ?";
+        String sql = "update peminjaman SET tglkembali = ?  WHERE kodeanggota = ? AND kodebuku = ? AND tglpinjam = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setString(1, peminjaman.getKodeanggota());
-        ps.setString(2, peminjaman.getKodebuku());
-        ps.setString(3, peminjaman.getTglpinjam());
-        ps.setString(4, peminjaman.getTglkembali());
-        ps.setString(5, kode);
+        ps.setString(1, peminjaman.getTglkembali());
+        ps.setString(2, peminjaman.getKodeanggota());
+        ps.setString(3, peminjaman.getKodebuku());
+        ps.setString(4, peminjaman.getTglpinjam());
         ps.executeUpdate();
-        ps.close();
     }
     
     public void delete (String kode) throws Exception{
@@ -48,10 +45,12 @@ public class PeminjamanDaoImpl implements PeminjamanDao{
         ps.executeUpdate();
     } 
     
-    public Peminjaman getPeminjaman(String kodeanggota) throws Exception{
-        String sql = "SELECT * FROM peminjaman WHERE kodeanggota = ?";
-        PreparedStatement ps = connection.prepareStatement(sql);
+    public Peminjaman getPeminjaman(String kodeanggota, String kodebuku, String tglpinjam) throws Exception{
+        String sql = "SELECT * FROM peminjaman WHERE kodeanggota = ? and kodebuku = ? and tglpinjam = ?";
+        PreparedStatement ps = connection.prepareStatement(sql); 
         ps.setString(1, kodeanggota);
+        ps.setString(2, kodebuku);
+        ps.setString(3, tglpinjam);
         ResultSet rs = ps.executeQuery();
         Peminjaman peminjaman = null;
         if(rs.next()){
@@ -80,4 +79,5 @@ public class PeminjamanDaoImpl implements PeminjamanDao{
         }
         return list;
     }
+
 }
